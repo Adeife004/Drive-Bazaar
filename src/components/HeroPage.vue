@@ -1,68 +1,24 @@
-
 <template>
   <!-- hero-page -->
   <div class="hero-page">
-    <!-- Header with Navbar -->
+    <!-- header -->
     <header>
+      <!-- navbar -->
       <nav class="navbar">
-        <!-- Logo & Menu Icon -->
+        <!-- logo-menu-icon -->
         <div class="logo-menu-icon">
           <h2>DRIVEBAZAAR</h2>
-          <i :class="[
-            'fa-solid',
-            isMenuOpen ? 'fa-xmark' : 'fa-bars',
-            { 'fa-spin': !isMenuOpen }
-          ]" @click="toggleMenu"></i>
+          <i :class="isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" @click="toggleMenu"></i>
         </div>
-
-        <!-- Navigation Menu -->
+        <!-- nav-menu -->
         <div class="nav-menu" :class="{ 'show-menu': isMenuOpen }">
+          <!-- nav-list -->
           <ul class="nav-list">
-            <!-- Home -->
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-
-            <!-- Dropdown: Listings -->
-            <li class="nav-item dropdown" :class="{ show: activeDropdown === 'listings' }">
-              <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleDropdown('listings')">Listings</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-
-            <!-- Dropdown: Blog -->
-            <li class="nav-item dropdown" :class="{ show: activeDropdown === 'blog' }">
-              <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleDropdown('blog')">Blog</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-
-            <!-- Dropdown: Pages -->
-            <li class="nav-item dropdown" :class="{ show: activeDropdown === 'pages' }">
-              <a class="nav-link dropdown-toggle" href="#" @click.prevent="toggleDropdown('pages')">Pages</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-
-            <!-- Sign In -->
+            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Listings</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+            <!-- nav-iten sign-in -->
             <li class="nav-item sign-in">
               <a class="nav-link" href="#">
                 <i class="fa-solid fa-user"></i>
@@ -70,8 +26,7 @@
               </a>
             </li>
           </ul>
-
-          <!-- Submit Listing Button -->
+          <!-- submit-btn -->
           <button class="submit-btn">Submit Listing</button>
         </div>
       </nav>
@@ -106,6 +61,7 @@
             </div>
             <!-- search-item -->
             <div class="search-item">
+              <!-- form-select -->
               <select class="form-select">
                 <option selected>Any Models</option>
                 <option value="sedan">Sedan</option>
@@ -117,6 +73,7 @@
             </div>
             <!-- search-item -->
             <div class="search-item">
+              <!-- form-select -->
               <select class="form-select">
                 <option selected>All Prices</option>
                 <option value="0-10000">$0 - $10,000</option>
@@ -130,9 +87,9 @@
             <div class="search-item">
               <input type="text" class="form-control" placeholder="Search for a car">
             </div>
-            <!-- search-item(search-btn) -->
+            <!-- search-item -->
             <div class="search-item">
-              <button class="btn btn-primary search-btn">
+              <button class="btn search-btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 Search Car
               </button>
@@ -140,62 +97,35 @@
           </div>
         </div>
       </div>
+      <!-- other-features -->
       <div class="other-features">
         <p>Or Browse Featured Model</p>
         <!-- models-wrapper -->
         <div class="models-wrapper">
-          <!-- models-track -->
-          <div class="models-track">
-            <!-- models -->
-            <div class="models">
-              <!-- model -->
-              <div class="model">
-                <img src="../assets/suv-icon.png" alt="suv">
-                <p>SUV</p>
-              </div>
-              <div class="model">
-                <img src="../assets/sedan-icon.png" alt="sedan">
-                <p>Sedan</p>
-              </div>
-              <div class="model">
-                <img src="../assets/coupe-icon.png" alt="coupe">
-                <p>Coupe</p>
-              </div>
-              <div class="model">
-                <img src="../assets/Hatchback-icon.png" alt="Hatchback">
-                <p>Hatchback</p>
-              </div>
-              <div class="model">
-                <img src="../assets/Hybrid-icon.png" alt="Hybrid">
-                <p>Hybrid</p>
-              </div>
-            </div>
-            <!-- Duplicate for seamless scroll -->
-            <div class="models">
-              <div class="model">
-                <img src="../assets/suv-icon.png" alt="suv">
-                <p>SUV</p>
-              </div>
-              <div class="model">
-                <img src="../assets/sedan-icon.png" alt="sedan">
-                <p>Sedan</p>
-              </div>
-              <div class="model">
-                <img src="../assets/coupe-icon.png" alt="coupe">
-                <p>Coupe</p>
-              </div>
-              <div class="model">
-                <img src="../assets/Hatchback-icon.png" alt="Hatchback">
-                <p>Hatchback</p>
-              </div>
-              <div class="model">
-                <img src="../assets/Hybrid-icon.png" alt="Hybrid">
-                <p>Hybrid</p>
-              </div>
-            </div>
+          <!-- models -->
+          <div class="models">
+            <button class="model2">
+              <img src="../assets/suv-icon.png" alt="suv">
+              <p>SUV</p>
+            </button>
+            <button class="model1">
+              <img src="../assets/sedan-icon.png" alt="sedan">
+              <p>Sedan</p>
+            </button>
+            <button class="model1">
+              <img src="../assets/coupe-icon.png" alt="coupe">
+              <p>Coupe</p>
+            </button>
+            <button class="model1">
+              <img src="../assets/Hatchback-icon.png" alt="Hatchback">
+              <p>Hatchback</p>
+            </button>
+            <button class="model2">
+              <img src="../assets/Hybrid-icon.png" alt="Hybrid">
+              <p>Hybrid</p>
+            </button>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -206,29 +136,13 @@ export default {
   name: 'HeroPage',
   data() {
     return {
-      isMenuOpen: false,
-      activeDropdown: null
+      isMenuOpen: false
     };
   },
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
-      this.activeDropdown = null;
-    },
-    toggleDropdown(name) {
-      this.activeDropdown = this.activeDropdown === name ? null : name;
-    },
-    handleOutsideClick(event) {
-      if (!event.target.closest('.dropdown')) {
-        this.activeDropdown = null;
-      }
     }
-  },
-  mounted() {
-    document.addEventListener('click', this.handleOutsideClick);
-  },
-  beforeUnmount() {
-    document.removeEventListener('click', this.handleOutsideClick);
   }
 };
 </script>
@@ -255,7 +169,6 @@ export default {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  /* Adjust opacity as needed */
   z-index: 0;
 }
 
@@ -271,24 +184,19 @@ export default {
 .logo-menu-icon {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   color: #fff;
 }
 
 .logo-menu-icon h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
 }
 
 .logo-menu-icon i {
   display: none;
-  font-size: 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.logo-menu-icon i:hover {
-  transform: scale(1.1);
 }
 
 .nav-menu {
@@ -320,9 +228,8 @@ export default {
 .nav-link {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   display: flex;
-  align-items: center;
   gap: 8px;
   padding: 8px 0;
   transition: color 0.3s ease;
@@ -370,9 +277,13 @@ export default {
 
 .sign-in .nav-link {
   display: flex;
-  width: auto;
+  align-items: center;
+  gap: 6px;
   white-space: nowrap;
+  color: #fff;
+  text-decoration: none;
 }
+
 
 .submit-btn {
   width: 100%;
@@ -383,6 +294,7 @@ export default {
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+  white-space: nowrap;
   transition: background-color 0.3s ease;
 }
 
@@ -392,6 +304,7 @@ export default {
 
 /* hero-container styles */
 .hero-container {
+  margin-top: 30px;
   position: relative;
   z-index: 1;
   padding: 40px 20px;
@@ -403,7 +316,7 @@ export default {
 }
 
 .hero-container h2 {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
   color: #fff;
 }
@@ -466,14 +379,13 @@ export default {
 }
 
 .search-container {
+  border-radius: 80px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 15px;
-  backdrop-filter: blur(5px);
+  background: #fff;
+  padding: 10px 10px;
 }
 
 .search-item {
@@ -488,6 +400,7 @@ export default {
   border: none;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.9);
+  outline: none;
 }
 
 .form-select option {
@@ -504,6 +417,7 @@ export default {
   background-color: #ffd700;
   border: none;
   color: #333;
+  border-radius: 40px;
   transition: background-color 0.3s ease;
 }
 
@@ -516,66 +430,59 @@ export default {
 }
 
 .other-features {
-  margin-top: 40px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .other-features p {
   color: #fff;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .models-wrapper {
   width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.models-track {
-  display: flex;
-  animation: scrollModels 20s linear infinite;
-  width: max-content;
 }
 
 .models {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
 }
 
-.model {
+.model1,
+.model2 {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 10px;
-  width: 150px;
-  margin-right: 20px;
-  padding: 10px;
+  padding: 5px 10px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   color: white;
   text-align: center;
+  border: none;
 }
 
-.model p {
+.model1 p,
+.model2 p {
   margin: 0;
+  font-size: 12px;
 }
 
-.model img {
+.model1 img {
   width: 40px;
   height: auto;
 }
 
-.models-wrapper:hover .models-track {
-  animation-play-state: paused;
-}
-
-@keyframes scrollModels {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+.model2 img {
+  width: 35px;
+  height: auto;
 }
 
 /* responsiveness for smaller screen */
@@ -584,6 +491,17 @@ export default {
     justify-content: space-between;
     width: 100%;
   }
+
+  .logo-menu-icon i {
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.logo-menu-icon i:hover {
+  transform: scale(1.1);
+}
 
   .logo-menu-icon i {
     display: block;
@@ -623,6 +541,7 @@ export default {
   }
 
   .hero-container {
+    margin-top: 0;
     padding: 20px 0;
   }
 
@@ -636,11 +555,16 @@ export default {
   }
 
   .search-container {
+    border-radius: 10px;
     flex-direction: column;
   }
 
   .search-item {
     width: 100%;
+  }
+
+  .model2 {
+    display: none;
   }
 }
 </style>

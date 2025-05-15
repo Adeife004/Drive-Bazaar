@@ -18,6 +18,8 @@
             <li class="nav-item"><a class="nav-link" href="#">Listings</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             <!-- nav-iten sign-in -->
             <li class="nav-item sign-in">
               <a class="nav-link" href="#">
@@ -240,35 +242,6 @@ export default {
   color: #ffd700;
 }
 
-.dropdown-menu {
-  background: #333;
-  display: none;
-  list-style: none;
-  padding-left: 16px;
-  margin-top: 8px;
-}
-
-.dropdown.show .dropdown-menu {
-  display: block;
-}
-
-.dropdown-item {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 0;
-  display: block;
-  transition: color 0.3s ease;
-}
-
-.dropdown-item:hover {
-  color: #ffd700;
-}
-
-.dropdown-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 8px 0;
-}
-
 .sign-in span {
   font-size: 14px;
   margin-left: 8px;
@@ -284,6 +257,39 @@ export default {
   text-decoration: none;
 }
 
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+/* Hover and active effects */
+.nav-link:hover,
+.nav-link.active {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
 
 .submit-btn {
   width: 100%;
@@ -493,15 +499,15 @@ export default {
   }
 
   .logo-menu-icon i {
-  font-size: 24px;
-  cursor: pointer;
-  display: block;
-  transition: all 0.3s ease;
-}
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    transition: all 0.3s ease;
+  }
 
-.logo-menu-icon i:hover {
-  transform: scale(1.1);
-}
+  .logo-menu-icon i:hover {
+    transform: scale(1.1);
+  }
 
   .logo-menu-icon i {
     display: block;

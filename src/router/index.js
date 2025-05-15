@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import NavbarPage from '../components/NavbarPage.vue';
 import HeroPage from '../components/HeroPage.vue'
 
 const routes = [
@@ -7,7 +6,7 @@ const routes = [
     path: '/',
     components: {
       hero: HeroPage,
-      default: NavbarPage
+      default: HeroPage
     },
     name: 'home'
   }

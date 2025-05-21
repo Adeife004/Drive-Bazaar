@@ -15,6 +15,7 @@
     <!-- Main app content -->
     <template v-else>
       <router-view name="hero"></router-view>
+      <!-- <router-view name="explore-brand"></router-view> -->
       <main class="main-content">
         <!-- <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">

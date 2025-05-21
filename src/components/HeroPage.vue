@@ -1,141 +1,153 @@
 <template>
-  <!-- hero-page -->
-  <div class="hero-page">
-    <!-- header -->
-    <header>
-      <!-- navbar -->
-      <nav class="navbar">
-        <!-- logo-menu-icon -->
-        <div class="logo-menu-icon">
-          <h2>DRIVEBAZAAR</h2>
-          <i :class="isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" @click="toggleMenu"></i>
-        </div>
-        <!-- nav-menu -->
-        <div class="nav-menu" :class="{ 'show-menu': isMenuOpen }">
-          <!-- nav-list -->
-          <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Listings</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            <!-- nav-iten sign-in -->
-            <li class="nav-item sign-in">
-              <a class="nav-link" href="#">
-                <i class="fa-solid fa-user"></i>
-                <span>Sign In</span>
-              </a>
-            </li>
-          </ul>
-          <!-- submit-btn -->
-          <button class="submit-btn">Submit Listing</button>
-        </div>
-      </nav>
-    </header>
+  <div class="hero-wrapper">
+    <!-- hero-page -->
+    <div class="hero-page">
+      <!-- header -->
+      <header>
+        <!-- navbar-content -->
+        <nav class="navbar-content">
+          <!-- logo-menu-icon -->
+          <div class="logo-menu-icon">
+            <h2>DRIVEBAZAAR</h2>
+            <i :class="isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" @click="toggleMenu"></i>
+          </div>
+          <!-- nav-menu -->
+          <div class="nav-menu" :class="{ 'show-menu': isMenuOpen }">
+            <!-- nav-list -->
+            <ul class="nav-list">
+              <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Listings</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+              <!-- nav-iten sign-in -->
+              <li class="nav-item sign-in">
+                <a class="nav-link" href="#">
+                  <i class="fa-solid fa-user"></i>
+                  <span>Sign In</span>
+                </a>
+              </li>
+            </ul>
+            <!-- submit-btn -->
+            <button class="submit-btn">Submit Listing</button>
+          </div>
+        </nav>
+      </header>
 
-    <!-- hero-container -->
-    <div class="hero-container">
-      <h2>Find Your Perfect Car</h2>
-      <!-- hero-content -->
-      <div class="hero-content">
-        <!-- hero-list -->
-        <ul class="hero-list">
-          <li><a href="#" class="active">All</a></li>
-          <li><a href="#">New</a></li>
-          <li><a href="#">Used</a></li>
-        </ul>
-        <!-- hero-search -->
-        <div class="hero-search">
-          <!-- search-container -->
-          <div class="search-container">
-            <!-- search-item -->
-            <div class="search-item">
-              <!-- form-select -->
-              <select class="form-select">
-                <option selected>Any Makes</option>
-                <option value="toyota">Toyota</option>
-                <option value="honda">Honda</option>
-                <option value="bmw">BMW</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
+      <!-- hero-container -->
+      <div class="hero-container">
+        <h2>Find Your Perfect Car</h2>
+        <!-- hero-content -->
+        <div class="hero-content">
+          <!-- hero-list -->
+          <ul class="hero-list">
+            <li><a href="#" class="active">All</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Used</a></li>
+          </ul>
+          <!-- hero-search -->
+          <div class="hero-search">
+            <!-- search-container -->
+            <div class="search-container">
+              <!-- search-item -->
+              <div class="search-item">
+                <!-- form-select -->
+                <select class="form-select">
+                  <option selected>Any Makes</option>
+                  <option value="toyota">Toyota</option>
+                  <option value="honda">Honda</option>
+                  <option value="bmw">BMW</option>
+                  <option value="mercedes">Mercedes</option>
+                  <option value="audi">Audi</option>
+                </select>
+              </div>
+              <!-- search-item -->
+              <div class="search-item">
+                <!-- form-select -->
+                <select class="form-select">
+                  <option selected>Any Models</option>
+                  <option value="sedan">Sedan</option>
+                  <option value="suv">SUV</option>
+                  <option value="hatchback">Hatchback</option>
+                  <option value="coupe">Coupe</option>
+                  <option value="wagon">Wagon</option>
+                </select>
+              </div>
+              <!-- search-item -->
+              <div class="search-item">
+                <!-- form-select -->
+                <select class="form-select">
+                  <option selected>All Prices</option>
+                  <option value="0-10000">$0 - $10,000</option>
+                  <option value="10000-20000">$10,000 - $20,000</option>
+                  <option value="20000-30000">$20,000 - $30,000</option>
+                  <option value="30000-40000">$30,000 - $40,000</option>
+                  <option value="40000+">$40,000+</option>
+                </select>
+              </div>
+              <!-- search-item -->
+              <div class="search-item">
+                <input type="text" class="form-control" placeholder="Search for a car">
+              </div>
+              <!-- search-item -->
+              <div class="search-item">
+                <button class="btn search-btn">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  Search Car
+                </button>
+              </div>
             </div>
-            <!-- search-item -->
-            <div class="search-item">
-              <!-- form-select -->
-              <select class="form-select">
-                <option selected>Any Models</option>
-                <option value="sedan">Sedan</option>
-                <option value="suv">SUV</option>
-                <option value="hatchback">Hatchback</option>
-                <option value="coupe">Coupe</option>
-                <option value="wagon">Wagon</option>
-              </select>
-            </div>
-            <!-- search-item -->
-            <div class="search-item">
-              <!-- form-select -->
-              <select class="form-select">
-                <option selected>All Prices</option>
-                <option value="0-10000">$0 - $10,000</option>
-                <option value="10000-20000">$10,000 - $20,000</option>
-                <option value="20000-30000">$20,000 - $30,000</option>
-                <option value="30000-40000">$30,000 - $40,000</option>
-                <option value="40000+">$40,000+</option>
-              </select>
-            </div>
-            <!-- search-item -->
-            <div class="search-item">
-              <input type="text" class="form-control" placeholder="Search for a car">
-            </div>
-            <!-- search-item -->
-            <div class="search-item">
-              <button class="btn search-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                Search Car
+          </div>
+        </div>
+        <!-- other-features -->
+        <div class="other-features">
+          <p>Or Browse Featured Model</p>
+          <!-- models-wrapper -->
+          <div class="models-wrapper">
+            <!-- models -->
+            <div class="models">
+              <button class="model2">
+                <img src="../assets/suv-icon.png" alt="suv">
+                <p>SUV</p>
+              </button>
+              <button class="model2">
+                <img src="../assets/sedan-icon.png" alt="sedan">
+                <p>Sedan</p>
+              </button>
+              <button class="model1">
+                <img src="../assets/coupe-icon.png" alt="coupe">
+                <p>Coupe</p>
+              </button>
+              <button class="model1">
+                <img src="../assets/Hatchback-icon.png" alt="Hatchback">
+                <p>Hatchback</p>
+              </button>
+              <button class="model2">
+                <img src="../assets/Hybrid-icon.png" alt="Hybrid">
+                <p>Hybrid</p>
               </button>
             </div>
           </div>
         </div>
       </div>
-      <!-- other-features -->
-      <div class="other-features">
-        <p>Or Browse Featured Model</p>
-        <!-- models-wrapper -->
-        <div class="models-wrapper">
-          <!-- models -->
-          <div class="models">
-            <button class="model2">
-              <img src="../assets/suv-icon.png" alt="suv">
-              <p>SUV</p>
-            </button>
-            <button class="model1">
-              <img src="../assets/sedan-icon.png" alt="sedan">
-              <p>Sedan</p>
-            </button>
-            <button class="model1">
-              <img src="../assets/coupe-icon.png" alt="coupe">
-              <p>Coupe</p>
-            </button>
-            <button class="model1">
-              <img src="../assets/Hatchback-icon.png" alt="Hatchback">
-              <p>Hatchback</p>
-            </button>
-            <button class="model2">
-              <img src="../assets/Hybrid-icon.png" alt="Hybrid">
-              <p>Hybrid</p>
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
+    <ExploreBrand>
+      <ExploreVehicles />
+    </ExploreBrand>
   </div>
 </template>
 
 <script>
+import ExploreBrand from '../components/ExploreBrand.vue';
+import ExploreVehicles from '../components/ExploreVehicles.vue';
+
 export default {
   name: 'HeroPage',
+  components: {
+    ExploreBrand,
+    ExploreVehicles
+  },
   data() {
     return {
       isMenuOpen: false
@@ -150,6 +162,12 @@ export default {
 </script>
 
 <style scoped>
+.hero-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .hero-page {
   position: relative;
   z-index: 1;
@@ -157,7 +175,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   padding: 0 20px;
   overflow: hidden;
@@ -174,7 +192,7 @@ export default {
   z-index: 0;
 }
 
-.navbar {
+.navbar-content {
   position: relative;
   width: 100%;
   padding: 20px 0;
@@ -513,6 +531,10 @@ export default {
     display: block;
   }
 
+  .navbar-content {
+    padding: 10px 0;
+  }
+
   .nav-menu {
     position: absolute;
     top: 100%;
@@ -524,7 +546,7 @@ export default {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 1001;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -538,17 +560,17 @@ export default {
   .nav-list {
     flex-direction: column;
     width: 100%;
-    gap: 16px;
+    gap: 10px;
   }
 
   .submit-btn {
     width: 100%;
-    margin-top: 16px;
+    margin-top: 5px;
   }
 
   .hero-container {
     margin-top: 0;
-    padding: 20px 0;
+    /* padding: 0; */
   }
 
   .hero-container h2 {
@@ -571,6 +593,23 @@ export default {
 
   .model2 {
     display: none;
+  }
+
+  .other-features {
+    margin-top: 20px;
+  }
+}
+
+.explore-brand-section {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  padding: 40px 20px;
+}
+
+@media (max-width: 320px) {
+  .hero-page {
+    height: 140vh;
   }
 }
 </style>

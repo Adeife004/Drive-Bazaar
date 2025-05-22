@@ -135,6 +135,15 @@
 <script>
 export default {
   name: 'ExploreBrand',
+  mounted() {
+    // Initialize the carousel with auto-sliding
+    const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleCaptions'), {
+      interval: 3000, // Time between slides in milliseconds
+      wrap: true,     // Whether to cycle continuously
+      keyboard: true, // Whether to respond to keyboard events
+      pause: 'hover'  // Pauses on mouse enter and resumes on mouse leave
+    });
+  }
 }
 </script>
 
@@ -306,11 +315,9 @@ export default {
   .carousel {
     display: block;
   }
-  
+
   .brand-logo {
     display: none;
   }
 }
-
-
 </style>

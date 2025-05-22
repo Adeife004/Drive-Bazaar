@@ -384,21 +384,6 @@ export default {
   font-size: 12px;
 }
 
-@media (min-width: 768px) {
-  .vehicles-section {
-    padding: 40px 30px;
-  }
-
-  .vehicle-text {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .vehicle-text h2 {
-    font-size: 24px;
-  }
-}
-
 /* ========== 🎯 CAROUSEL CUSTOMIZATION ========== */
 
 /* Deep styling for vue3-carousel child components */

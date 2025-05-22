@@ -22,9 +22,9 @@
         :wrap-around="true"
         :mouse-drag="true"
         :autoplay="true"
-        :autoplay-timeout="8000"
+        :autoplay-timeout="10000"
         :pause-autoplay-on-hover="true"
-        :transition="800"
+        :transition="1000"
         :snap-align="'center'"
         :infinite="true"
         :breakpoints="{

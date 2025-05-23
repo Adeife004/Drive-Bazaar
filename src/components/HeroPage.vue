@@ -135,6 +135,7 @@
     <ExploreBrand>
       <ExploreVehicles />
       <FairPrice />
+      <WhyChoose />
     </ExploreBrand>
   </div>
 </template>
@@ -143,13 +144,15 @@
 import ExploreBrand from '../components/ExploreBrand.vue';
 import ExploreVehicles from '../components/ExploreVehicles.vue';
 import FairPrice from '../components/FairPrice.vue';
+import WhyChoose from '../components/WhyChoose.vue';
 
 export default {
   name: 'HeroPage',
   components: {
     ExploreBrand,
     ExploreVehicles,
-    FairPrice
+    FairPrice,
+    WhyChoose
   },
   data() {
     return {

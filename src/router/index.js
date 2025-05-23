@@ -3,6 +3,7 @@ import HeroPage from '../components/HeroPage.vue'
 import ExploreBrand from '../components/ExploreBrand.vue'
 import ExploreVehicles from '../components/ExploreVehicles.vue'
 import FairPrice from '../components/FairPrice.vue'
+import WhyChoose from '../components/WhyChoose.vue'
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     path: '/fair-price',
     componenet: FairPrice,
     name: 'fair-price'
+  },
+  {
+    path: '/why-choose',
+    componenet: WhyChoose,
+    name: 'why-choose'
   }
 ]
 

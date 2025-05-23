@@ -403,6 +403,7 @@ export default {
 
 .hero-search {
   margin-top: 20px;
+  padding: 0 60px;
   width: 100%;
   max-width: 1200px;
 }

@@ -134,6 +134,7 @@
     </div>
     <ExploreBrand>
       <ExploreVehicles />
+      <FairPrice />
     </ExploreBrand>
   </div>
 </template>
@@ -141,12 +142,14 @@
 <script>
 import ExploreBrand from '../components/ExploreBrand.vue';
 import ExploreVehicles from '../components/ExploreVehicles.vue';
+import FairPrice from '../components/FairPrice.vue';
 
 export default {
   name: 'HeroPage',
   components: {
     ExploreBrand,
-    ExploreVehicles
+    ExploreVehicles,
+    FairPrice
   },
   data() {
     return {

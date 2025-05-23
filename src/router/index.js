@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HeroPage from '../components/HeroPage.vue'
 import ExploreBrand from '../components/ExploreBrand.vue'
 import ExploreVehicles from '../components/ExploreVehicles.vue'
+import FairPrice from '../components/FairPrice.vue'
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     path: '/explore-vehicles',
     componenet: ExploreVehicles,
     name: 'explore-vehicles'
+  },
+  {
+    path: '/fair-price',
+    componenet: FairPrice,
+    name: 'fair-price'
   }
 ]
 

@@ -68,6 +68,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  position: relative; /* For proper stacking context */
 }
 
 * {
@@ -85,6 +88,9 @@ body {
 .main-content {
   flex: 1;
   padding: 1rem;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  position: relative;
 }
 
 .global-loading {

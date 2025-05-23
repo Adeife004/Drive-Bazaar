@@ -4,6 +4,7 @@ import ExploreBrand from '../components/ExploreBrand.vue'
 import ExploreVehicles from '../components/ExploreVehicles.vue'
 import FairPrice from '../components/FairPrice.vue'
 import WhyChoose from '../components/WhyChoose.vue'
+import PopularMakes from '../components/PopularMakes.vue'
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: '/why-choose',
     componenet: WhyChoose,
     name: 'why-choose'
+  },
+  {
+    path: '/popular-makes',
+    componenet: PopularMakes,
+    name: 'popular-makes'
   }
 ]
 

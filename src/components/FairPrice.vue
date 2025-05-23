@@ -7,7 +7,7 @@
             <!-- car-video -->
             <div class="car-video">
                 <video controls autoplay loop muted playsinline>
-                    <source src="../assets/Car Video.mp4" type="video/mp4">
+                    <source src="../assets/Car-Video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -149,6 +149,8 @@ export default {
     justify-content: space-around;
     padding: 40px 0;
     background: #fff;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .car-sales {
@@ -221,6 +223,26 @@ export default {
         width: 100%;
         margin-top: 15px;
     }
+
+    .sales {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .car-sales {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .car-sales h3 {
+        font-size: 28px;
+    }
+
+    .car-sales p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -249,7 +271,12 @@ export default {
     }
 
     .sales {
-        padding: 30px 15px;
+        padding: 25px 15px;
+        gap: 25px;
+    }
+
+    .car-sales {
+        max-width: 250px;
     }
 
     .car-sales h3 {

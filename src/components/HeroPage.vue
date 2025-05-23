@@ -137,6 +137,7 @@
       <FairPrice />
       <WhyChoose />
     </ExploreBrand>
+    <PopularMakes />
   </div>
 </template>
 
@@ -145,6 +146,7 @@ import ExploreBrand from '../components/ExploreBrand.vue';
 import ExploreVehicles from '../components/ExploreVehicles.vue';
 import FairPrice from '../components/FairPrice.vue';
 import WhyChoose from '../components/WhyChoose.vue';
+import PopularMakes from '../components/PopularMakes.vue';
 
 export default {
   name: 'HeroPage',
@@ -152,7 +154,8 @@ export default {
     ExploreBrand,
     ExploreVehicles,
     FairPrice,
-    WhyChoose
+    WhyChoose,
+    PopularMakes
   },
   data() {
     return {
@@ -172,6 +175,8 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden; 
+  position: relative;
 }
 
 .hero-page {
@@ -342,6 +347,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .hero-container h2 {
@@ -406,6 +413,7 @@ export default {
   padding: 0 60px;
   width: 100%;
   max-width: 1200px;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .search-container {
@@ -416,6 +424,7 @@ export default {
   justify-content: center;
   background: #fff;
   padding: 10px 10px;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .search-item {
@@ -568,6 +577,17 @@ export default {
   .submit-btn {
     width: 100%;
     margin-top: 5px;
+  }
+
+  .hero-search {
+    width: 100%;
+    padding: 0 15px;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  .search-container {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 }
 

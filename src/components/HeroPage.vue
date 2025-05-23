@@ -341,7 +341,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -405,7 +404,7 @@ export default {
 .hero-search {
   margin-top: 20px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .search-container {
@@ -516,7 +515,7 @@ export default {
 }
 
 /* responsiveness for smaller screen */
-@media (max-width: 768px) {
+@media (max-width: 884px) {
   .logo-menu-icon {
     justify-content: space-between;
     width: 100%;
@@ -531,10 +530,6 @@ export default {
 
   .logo-menu-icon i:hover {
     transform: scale(1.1);
-  }
-
-  .logo-menu-icon i {
-    display: block;
   }
 
   .navbar-content {
@@ -573,10 +568,11 @@ export default {
     width: 100%;
     margin-top: 5px;
   }
+}
 
+@media (max-width: 768px) {
   .hero-container {
     margin-top: 0;
-    /* padding: 0; */
   }
 
   .hero-container h2 {
@@ -589,12 +585,20 @@ export default {
   }
 
   .search-container {
-    border-radius: 10px;
-    flex-direction: column;
+    border-radius: 15px;
+    padding: 12px;
+    gap: 12px;
   }
 
-  .search-item {
-    width: 100%;
+  .form-select,
+  .form-control {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .search-btn {
+    padding: 10px;
+    font-size: 13px;
   }
 
   .model2 {
@@ -603,6 +607,17 @@ export default {
 
   .other-features {
     margin-top: 20px;
+  }
+
+  .hero-search {
+    padding: 0 10px;
+  }
+
+  .search-container {
+    width: 100%;
+    border-radius: 15px;
+    padding: 12px;
+    gap: 12px;
   }
 }
 
@@ -617,5 +632,87 @@ export default {
   .hero-page {
     height: 140vh;
   }
+}
+
+/* Update media query for search container */
+@media (max-width: 884px) {
+    .hero-search {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .search-container {
+        border-radius: 20px;
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .search-item {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .form-select,
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .search-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .hero-container {
+        padding: 30px 0;
+        width: 100%;
+    }
+
+    .hero-container h2 {
+        font-size: 24px;
+        padding: 0 15px;
+    }
+
+    .hero-list {
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .hero-list li a {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+/* Add styles for very small screens */
+@media (max-width: 480px) {
+    .hero-search {
+        padding: 0 8px;
+    }
+
+    .search-container {
+        width: 100%;
+        border-radius: 12px;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .form-select,
+    .form-control {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .search-btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .hero-container h2 {
+        font-size: 20px;
+    }
 }
 </style>

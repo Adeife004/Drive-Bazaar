@@ -168,39 +168,96 @@ export default {
     margin: 5px 0 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 884px) {
     .container {
         flex-direction: column;
-        padding: 30px 20px;
+        padding: 20px;
     }
 
-    .car-video,
-    .car-text,
+    .car-video {
+        width: 100%;
+        order: -1; /* This puts the video on top */
+        margin-bottom: 20px;
+    }
+
     .car-video video {
         width: 100%;
-        border-radius: 0;
+        height: auto;
+        border-radius: 12px;
+        max-height: 300px;
+        object-fit: cover;
     }
 
     .car-text {
-        padding: 20px 10px;
-        /* width: 100%; */
+        width: 100%;
+        border-radius: 12px;
+        padding: 25px 20px;
     }
 
     .car-text h2 {
-        font-size: 16px;
+        font-size: 20px;
+        line-height: 1.4;
     }
 
     .car-text p {
         font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .check-box {
+        margin-top: 15px;
+    }
+
+    .checkbox-item {
+        margin-bottom: 8px;
+    }
+
+    .checkbox-item label {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .car-video video {
+        max-height: 200px;
+    }
+
+    .car-text {
+        padding: 20px 15px;
+    }
+
+    .car-text h2 {
+        font-size: 18px;
+    }
+
+    .car-text p {
+        font-size: 13px;
+    }
+
+    .checkbox-item label {
+        font-size: 12px;
     }
 
     .sales {
-        flex-direction: column;
-        gap: 20px;
+        padding: 30px 15px;
     }
 
     .car-sales h3 {
-        font-size: 28px;
+        font-size: 24px;
+    }
+
+    .car-sales p {
+        font-size: 12px;
     }
 }
 </style>

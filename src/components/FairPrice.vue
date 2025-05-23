@@ -67,8 +67,8 @@ export default {
             const counters = document.querySelectorAll('.counter');
             counters.forEach(counter => {
                 const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000; // 2 seconds
-                const step = target / (duration / 16); // 60fps
+                const duration = 3000; 
+                const step = target / (duration / 16); 
                 let current = 0;
 
                 const updateCounter = () => {
@@ -156,7 +156,7 @@ export default {
 }
 
 .car-sales h3 {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
     color: #333;
     margin: 0;

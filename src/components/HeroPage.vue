@@ -136,8 +136,8 @@
       <ExploreVehicles />
       <FairPrice />
       <WhyChoose />
+      <PopularMakes />
     </ExploreBrand>
-    <PopularMakes />
   </div>
 </template>
 

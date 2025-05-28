@@ -7,7 +7,7 @@
             <!-- car-video -->
             <div class="car-video">
                 <video controls autoplay loop muted playsinline>
-                    <source src="../assets/Car-Video.mp4" type="video/mp4">
+                    <source src="../assets/Car-Video.mp4 " type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>

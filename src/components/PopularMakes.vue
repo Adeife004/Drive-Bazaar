@@ -66,7 +66,6 @@
 <script>
 import audiA5Image from '../assets/Audi A5 -2023.png';
 import audiA4Image from '../assets/Audi A4 - 2022.png';
-import orangeAudi from '../assets/New GLC.png';
 export default {
   name: 'Popularmakes',
   data() {
@@ -92,6 +91,17 @@ export default {
           transmission: 'Automatic',
           price: '$45,000',
           oldPrice: '$50,000',
+          label: 'Sale'
+        },
+        {
+          image: audiA4Image,
+          name: 'Audi A4 - 2022',
+          description: '4.0 D5 PowerPulse Momentum 5dr… Geartronic Estate',
+          mileage: '2500 Miles',
+          fuel: 'Diesel',
+          transmission: 'Manual',
+          price: '$22,000',
+          oldPrice: '$25,000',
           label: 'Sale'
         },
         {

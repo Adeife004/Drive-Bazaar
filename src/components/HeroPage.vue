@@ -133,10 +133,11 @@
       </div>
     </div>
     <ExploreBrand>
-      <ExploreVehicles />
-      <FairPrice />
-      <WhyChoose />
-      <PopularMakes />
+      <ExploreVehicles/>
+      <FairPrice/>
+      <WhyChoose/>
+      <PopularMakes/>
+      <BoxCar/>
     </ExploreBrand>
   </div>
 </template>
@@ -147,7 +148,7 @@ import ExploreVehicles from '../components/ExploreVehicles.vue';
 import FairPrice from '../components/FairPrice.vue';
 import WhyChoose from '../components/WhyChoose.vue';
 import PopularMakes from '../components/PopularMakes.vue';
-
+import BoxCar from '../components/BoxCar.vue';
 export default {
   name: 'HeroPage',
   components: {
@@ -155,7 +156,8 @@ export default {
     ExploreVehicles,
     FairPrice,
     WhyChoose,
-    PopularMakes
+    PopularMakes,
+    BoxCar
   },
   data() {
     return {

@@ -138,6 +138,8 @@
       <WhyChoose/>
       <PopularMakes/>
       <BoxCar/>
+      <CustomerSay/>
+      <LatestBlog/>
     </ExploreBrand>
   </div>
 </template>
@@ -149,6 +151,8 @@ import FairPrice from '../components/FairPrice.vue';
 import WhyChoose from '../components/WhyChoose.vue';
 import PopularMakes from '../components/PopularMakes.vue';
 import BoxCar from '../components/BoxCar.vue';
+import CustomerSay from '../components/CustomerSay.vue';
+import LatestBlog from '../components/LatestBlog.vue';
 export default {
   name: 'HeroPage',
   components: {
@@ -157,7 +161,9 @@ export default {
     FairPrice,
     WhyChoose,
     PopularMakes,
-    BoxCar
+    BoxCar,
+    CustomerSay,
+    LatestBlog
   },
   data() {
     return {

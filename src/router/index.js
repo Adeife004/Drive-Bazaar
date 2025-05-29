@@ -5,14 +5,12 @@ import ExploreVehicles from '../components/ExploreVehicles.vue'
 import FairPrice from '../components/FairPrice.vue'
 import WhyChoose from '../components/WhyChoose.vue'
 import PopularMakes from '../components/PopularMakes.vue'
+import CustomerSay from '../components/CustomerSay.vue'
 
 const routes = [
   {
     path: '/',
-    components: {
-      hero: HeroPage,
-      default: HeroPage
-    },
+    component: HeroPage,
     name: 'home'
   },
   {
@@ -22,23 +20,28 @@ const routes = [
   },
   {
     path: '/explore-vehicles',
-    componenet: ExploreVehicles,
+    component: ExploreVehicles,
     name: 'explore-vehicles'
   },
   {
     path: '/fair-price',
-    componenet: FairPrice,
+    component: FairPrice,
     name: 'fair-price'
   },
   {
     path: '/why-choose',
-    componenet: WhyChoose,
+    component: WhyChoose,
     name: 'why-choose'
   },
   {
     path: '/popular-makes',
-    componenet: PopularMakes,
+    component: PopularMakes,
     name: 'popular-makes'
+  },
+  {
+    path: '/customer-say',
+    component: CustomerSay,
+    name: 'customer-say'
   }
 ]
 

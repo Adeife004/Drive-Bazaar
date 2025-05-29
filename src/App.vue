@@ -14,15 +14,11 @@
 
     <!-- Main app content -->
     <template v-else>
-      <router-view name="hero"></router-view>
-      <!-- <router-view name="explore-brand"></router-view> -->
-      <main class="main-content">
-        <!-- <router-view v-slot="{ Component }">
-          <transition name="fade" mode="out-in">
-            <component :is="Component" />
-          </transition>
-        </router-view> -->
-      </main>
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </template>
   </div>
 </template>
@@ -69,8 +65,8 @@ export default {
   color: #2c3e50;
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  position: relative; /* For proper stacking context */
+  overflow-x: hidden;
+  position: relative;
 }
 
 * {
@@ -89,44 +85,11 @@ body {
   flex: 1;
   padding: 1rem;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden;
   position: relative;
 }
 
-.global-loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.error-boundary {
-  padding: 2rem;
-  text-align: center;
-  color: #dc3545;
-}
-
-.error-boundary button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.error-boundary button:hover {
-  background: #c82333;
-}
-
-/* Transition animations */
+/* Transition styles */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
@@ -135,5 +98,33 @@ body {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* Loading and error styles */
+.global-loading,
+.error-boundary {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-boundary button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #405ff2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error-boundary button:hover {
+  background: #3045c4;
 }
 </style>

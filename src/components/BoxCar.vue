@@ -4,7 +4,7 @@
         <!-- shop-car -->
         <div class="shop-car">
             <h2>Shop BoxCar Your Way</h2>
-            <!-- brand-link -->
+            <!-- car-link -->
             <a href="#" class="car-link">
                 View All
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>

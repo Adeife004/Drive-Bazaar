@@ -343,9 +343,30 @@ export default {
 
 @media (min-width: 1024px) {
   .makes-card {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1400px;
     margin: 20px auto 0;
+    gap: 25px;
+  }
+
+  .card-text h3 {
+    font-size: 18px;
+  }
+
+  .card-text p {
+    font-size: 14px;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
+
+  .price h4 {
+    font-size: 18px;
+  }
+
+  .details {
+    font-size: 14px;
   }
 }
 </style>

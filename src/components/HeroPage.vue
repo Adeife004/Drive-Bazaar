@@ -140,7 +140,9 @@
       <BoxCar/>
       <CustomerSay/>
       <LatestBlog/>
+      <CustomerCars/>
     </ExploreBrand>
+    <footerPage/>
   </div>
 </template>
 
@@ -153,6 +155,8 @@ import PopularMakes from '../components/PopularMakes.vue';
 import BoxCar from '../components/BoxCar.vue';
 import CustomerSay from '../components/CustomerSay.vue';
 import LatestBlog from '../components/LatestBlog.vue';
+import CustomerCars from '../components/CustomerCars.vue';
+import footerPage from '../components/footerPage.vue';
 export default {
   name: 'HeroPage',
   components: {
@@ -163,7 +167,9 @@ export default {
     PopularMakes,
     BoxCar,
     CustomerSay,
-    LatestBlog
+    LatestBlog,
+    CustomerCars,
+    footerPage
   },
   data() {
     return {

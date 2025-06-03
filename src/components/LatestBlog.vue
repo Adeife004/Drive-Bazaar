@@ -12,33 +12,51 @@
         </div>
         <!-- blog-post -->
         <div class="blog-post">
-          <div class="carousel" @mouseover="pauseAutoSlide" @mouseleave="startAutoSlide">
-            <transition name="fade" mode="out-in">
-              <div class="content" :key="currentIndex" v-if="blogPosts.length">
-                  <!-- image -->
-                  <div class="image">
-                      <img :src="blogPosts[currentIndex].image" :alt="blogPosts[currentIndex].title">
-                      <button>Sound</button>
-                  </div>
-                  <!-- content-text -->
-                  <div class="content-text">
-                      <p>{{ blogPosts[currentIndex].author }}</p>
-                      <p>{{ blogPosts[currentIndex].date }}</p>
-                  </div>
-                  <h4>{{ blogPosts[currentIndex].title }}</h4>
-              </div>
-            </transition>
-
-            <!-- Indicator Dots -->
-            <div class="indicators">
-              <span
-                v-for="(post, index) in blogPosts"
-                :key="index"
-                :class="{ active: index === currentIndex }"
-                @click="goToSlide(index)"
-              ></span>
+            <!-- Grid Layout for Large Screens -->
+            <div class="blog-grid">
+                <div v-for="(post, index) in blogPosts" :key="index" class="blog-card">
+                    <!-- image -->
+                    <div class="image">
+                        <img :src="post.image" :alt="post.title">
+                        <button>{{ post.buttonText }}</button>
+                    </div>
+                    <!-- content-text -->
+                    <div class="content-text">
+                        <p>{{ post.author }}</p>
+                        <p>{{ post.date }}</p>
+                    </div>
+                    <h4>{{ post.title }}</h4>
+                </div>
             </div>
-          </div>
+
+            <!-- Carousel for Small Screens -->
+            <div class="carousel" @mouseover="pauseAutoSlide" @mouseleave="startAutoSlide">
+                <transition name="fade" mode="out-in">
+                    <div class="content" :key="currentIndex" v-if="blogPosts.length">
+                        <!-- image -->
+                        <div class="image">
+                            <img :src="blogPosts[currentIndex].image" :alt="blogPosts[currentIndex].title">
+                            <button>{{ blogPosts[currentIndex].buttonText }}</button>
+                        </div>
+                        <!-- content-text -->
+                        <div class="content-text">
+                            <p>{{ blogPosts[currentIndex].author }}</p>
+                            <p>{{ blogPosts[currentIndex].date }}</p>
+                        </div>
+                        <h4>{{ blogPosts[currentIndex].title }}</h4>
+                    </div>
+                </transition>
+
+                <!-- Indicator Dots -->
+                <div class="indicators">
+                    <span
+                        v-for="(post, index) in blogPosts"
+                        :key="index"
+                        :class="{ active: index === currentIndex }"
+                        @click="goToSlide(index)"
+                    ></span>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -47,50 +65,56 @@
 export default {
     name: 'LatestBlog',
     data() {
-      return {
-        currentIndex: 0,
-        intervalId: null,
-        blogPosts: [
-          {
-            image: '/src/assets/blog1.png', // Update path as needed
-            author: 'Admin',
-            date: 'November 22, 2023',
-            title: '2024 BMW ALPINA XB with exclusive details extraordinary'
-          },
-          {
-            image: '/src/assets/blog1.png', // Update path as needed
-            author: 'Admin',
-            date: 'November 22, 2023',
-            title: 'Another exciting blog post title here'
-          },
-          {
-            image: '/src/assets/blog1.png', // Update path as needed
-            author: 'Admin',
-            date: 'November 22, 2023',
-            title: 'Yet another interesting blog post'
-          }
-        ]
-      }
+        return {
+            currentIndex: 0,
+            intervalId: null,
+            blogPosts: [
+                {
+                    image: '/src/assets/blog1.png', 
+                    author: 'Admin',
+                    date: 'November 22, 2023',
+                    title: '2024 BMW ALPINA XB with exclusive details extraordinary',
+                    buttonText: 'Sound'
+                },
+                {
+                    image: '/src/assets/blog2.png', 
+                    author: 'Admin',
+                    date: 'November 22, 2023',
+                    title: 'BMW X6 M50i is designed to exceed your sportiest.',
+                    buttonText: 'Accessories'
+                },
+                {
+                    image: '/src/assets/blog3.png', 
+                    author: 'Admin',
+                    date: 'November 22, 2023',
+                    title: 'BMW X5 Gold 2024 Sport Review: Light on Sport',
+                    buttonText: 'Exterior'
+                }
+            ]
+        }
     },
     methods: {
-      nextSlide() {
-        this.currentIndex = (this.currentIndex + 1) % this.blogPosts.length
-      },
-      goToSlide(index) {
-        this.currentIndex = index
-      },
-      startAutoSlide() {
-        this.intervalId = setInterval(this.nextSlide, 3000) // Auto slide every 3 seconds
-      },
-      pauseAutoSlide() {
-        clearInterval(this.intervalId)
-      }
+        nextSlide() {
+            this.currentIndex = (this.currentIndex + 1) % this.blogPosts.length
+        },
+        goToSlide(index) {
+            this.currentIndex = index
+        },
+        startAutoSlide() {
+            this.intervalId = setInterval(this.nextSlide, 3000)
+        },
+        pauseAutoSlide() {
+            clearInterval(this.intervalId)
+        }
     },
     mounted() {
-      this.startAutoSlide()
+        // Only start auto-slide if we're on mobile
+        if (window.innerWidth < 768) {
+            this.startAutoSlide()
+        }
     },
     beforeUnmount() {
-      this.pauseAutoSlide()
+        this.pauseAutoSlide()
     }
 }
 </script>
@@ -102,13 +126,13 @@ export default {
 
 .text {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .text h2 {
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .car-link {
@@ -124,22 +148,28 @@ export default {
   font-size: 12px;
 }
 
-/* Carousel styles - copied and adapted from CustomerSay.vue */
-.carousel {
-    max-width: 1000px; 
+/* Blog Grid Layout */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
 }
 
-/* Card styling for content */
-.content {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 30px 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex; 
-  flex-direction: column;
-  gap: 15px; 
+.blog-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.blog-card h4 {
+    font-size: 20px;
+    margin: 0;
 }
 
 /* Positioning for button on image */
@@ -175,95 +205,106 @@ export default {
   font-size: 14px;
 }
 
-/* Indicator Dots */
-.indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 12px;
+/* Carousel styles */
+.carousel {
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto;
     position: relative;
-    z-index: 2;
-}
-
-.indicators span {
-    width: 12px;
-    height: 12px;
-    background-color: #e0e0e0;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.indicators span:hover {
-    background-color: #405ff2;
-    transform: scale(1.1);
-}
-
-.indicators span.active {
-    background-color: #405ff2;
-    transform: scale(1.2);
-    box-shadow: 0 0 8px rgba(64, 95, 242, 0.4);
-}
-
-/* Fade Transition */
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.5s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-  transform: translateX(30px);
-}
-
-.fade-leave-to {
-  opacity: 0;
-  transform: translateX(-30px);
 }
 
 /* Responsive styles */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
-  .latest-container {
-    padding: 30px 15px;
-  }
+    .blog-grid {
+        display: none;
+    }
 
-  .content {
-    flex-direction: column;
-    gap: 20px; /* Adjusted gap for responsive */
-    padding: 10px;
-  }
+    .carousel {
+        display: block;
+    }
 
-  .image img {
-    width: 100%;
-    height: auto;
-  }
+    .blog-card {
+        padding: 15px;
+    }
 
-  .content h4 {
-    font-size: 15px;
-  }
+    .blog-card h4 {
+        font-size: 18px;
+    }
+
+    /* Carousel specific styles for mobile */
+    .content {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 12px;
+    }
+
+    .indicators span {
+        width: 12px;
+        height: 12px;
+        background-color: #e0e0e0;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .indicators span:hover {
+        background-color: #405ff2;
+        transform: scale(1.1);
+    }
+
+    .indicators span.active {
+        background-color: #405ff2;
+        transform: scale(1.2);
+        box-shadow: 0 0 8px rgba(64, 95, 242, 0.4);
+    }
+
+    /* Fade Transition */
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: all 0.5s ease;
+    }
+
+    .fade-enter-from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    .fade-leave-to {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
 }
 
 @media (max-width: 480px) {
-  .latest-container {
-    padding: 20px 10px;
-  }
+    .blog-card {
+        padding: 10px;
+    }
 
-  .content {
-    padding: 8px;
-    gap: 15px; /* Adjusted gap for responsive */
-  }
+    .blog-card h4 {
+        font-size: 18px;
+    }
 
-  .content h4 {
-    font-size: 14px;
-  }
-
-  .image button {
-    top: 5px;
-    right: 5px;
-    padding: 3px 6px;
-    font-size: 12px;
-  }
+    .content {
+        padding: 10px;
+    }
 }
 </style>

@@ -62,6 +62,9 @@
 </template>
 
 <script>
+import image1 from '../assets/blog1.png';
+import image2 from '../assets/blog2.png';
+import image3 from '../assets/blog3.png';
 export default {
     name: 'LatestBlog',
     data() {
@@ -70,21 +73,21 @@ export default {
             intervalId: null,
             blogPosts: [
                 {
-                    image: '/src/assets/blog1.png', 
+                    image: image1, 
                     author: 'Admin',
                     date: 'November 22, 2023',
                     title: '2024 BMW ALPINA XB with exclusive details extraordinary',
                     buttonText: 'Sound'
                 },
                 {
-                    image: '/src/assets/blog2.png', 
+                    image: image2, 
                     author: 'Admin',
                     date: 'November 22, 2023',
                     title: 'BMW X6 M50i is designed to exceed your sportiest.',
                     buttonText: 'Accessories'
                 },
                 {
-                    image: '/src/assets/blog3.png', 
+                    image: image3, 
                     author: 'Admin',
                     date: 'November 22, 2023',
                     title: 'BMW X5 Gold 2024 Sport Review: Light on Sport',
